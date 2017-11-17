@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatToolbarModule, MatSidenavModule, MatListModule} from '@angular/material';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './/app-routing.module';
+import {AppMaterialModule} from './app-material.module';
 import {SalesComponent} from './sales/sales.component';
 import {SalesDetailComponent} from './sales/sales-detail.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -20,9 +20,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule
+    AppMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
