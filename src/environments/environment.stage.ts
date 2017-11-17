@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiBase: 'http://clare-accounting.sportngin.com.dev'
+  apiBase: 'https://clare-accounting.stage.ngin-staging.com'
 };

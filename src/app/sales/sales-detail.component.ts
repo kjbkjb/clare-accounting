@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {SalesService} from './sales.service';
 
 @Component({
   selector: 'app-sales-detail',
@@ -8,7 +9,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class SalesDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private salesService: SalesService) {
+  }
 
   ngOnInit() {
   }
