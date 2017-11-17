@@ -9,7 +9,6 @@ import { AppRoutingModule } from './/app-routing.module';
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot(),
     AppRoutingModule
   ],
   providers: [],
