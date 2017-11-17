@@ -1,8 +1,8 @@
-<div class="page-header">
+<div *ngIf="report" class="page-header">
   <h1>Totals as of {{ report.report_date }}</h1>
 </div>
 
-<div class="container-fluid">
+<div *ngIf="report" class="container-fluid">
   <div class="row">
     <div class="col-sm-4">
       <table class="table">
