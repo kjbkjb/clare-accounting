@@ -8,7 +8,7 @@ import {catchError, map, tap} from 'rxjs/operators';
 import {ApiEnvelope} from '../api-envelope';
 
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'format': 'json' })
+  headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'application/json' })
 };
 
 @Injectable()
@@ -19,7 +19,7 @@ export class SalesService {
   }
 
   getSales(): Observable<ApiEnvelope<Sale[]>> {
-    return this.http.get<ApiEnvelope<Sale[]>>(this.salesUrl()).pipe(
+    return this.http.get<ApiEnvelope<Sale[]>>(this.salesUrl(), httpOptions).pipe(
       catchError(this.handleError('getSales', new ApiEnvelope<Sale[]>())));
   }
 
@@ -29,7 +29,7 @@ export class SalesService {
 
 
   private salesUrl(): string {
-    return environment.apiBase + '/sales.json';
+    return environment.apiBase + '/sales?list=summary';
   }
 
   private saleUrl(id): string {
