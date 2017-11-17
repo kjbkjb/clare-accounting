@@ -19,17 +19,18 @@ export class SalesService {
   }
 
   getSales(): Observable<ApiEnvelope<Sale[]>> {
-    return this.http.get<ApiEnvelope<Sale[]>>(this.salesUrl(), httpOptions).pipe(
+    return this.http.get<ApiEnvelope<Sale[]>>(this.salesUrl() + '?list=summary', httpOptions).pipe(
       catchError(this.handleError('getSales', new ApiEnvelope<Sale[]>())));
   }
 
-  getSale(id): Observable<Sale> {
-    return this.http.get<Sale>(this.saleUrl(id))
+  getSale(id): Observable<ApiEnvelope<Sale>> {
+    return this.http.get<ApiEnvelope<Sale>>(this.saleUrl(id), httpOptions).pipe(
+      catchError(this.handleError('getSale', new ApiEnvelope<Sale>())));
   }
 
 
   private salesUrl(): string {
-    return environment.apiBase + '/sales?list=summary';
+    return environment.apiBase + '/sales';
   }
 
   private saleUrl(id): string {
