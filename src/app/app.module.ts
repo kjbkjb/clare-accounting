@@ -1,7 +1,10 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './/app-routing.module';
+import {AppMaterialModule} from './app-material.module';
 import {SalesComponent} from './sales/sales.component';
 import {SalesDetailComponent} from './sales/sales-detail.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
@@ -15,7 +18,9 @@ import {DashboardComponent} from './dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    AppMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
