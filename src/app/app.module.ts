@@ -10,6 +10,7 @@ import {SalesComponent} from './sales/sales.component';
 import {SalesDetailComponent} from './sales/sales-detail.component';
 import {SalesService} from './sales/sales.service';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {DashboardService} from './dashboard/dashboard.service';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import {DashboardComponent} from './dashboard/dashboard.component';
     AppMaterialModule,
     HttpClientModule
   ],
-  providers: [SalesService],
+  providers: [SalesService, DashboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

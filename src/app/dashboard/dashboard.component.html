@@ -1,3 +1,56 @@
-<p>
-  dashboard works!
-</p>
+<div class="page-header">
+  <h1>Totals as of {{ report.report_date }}</h1>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <table class="table">
+        <tbody>
+        <tr>
+          <th>Total Invoices/Orders</th>
+          <td align="right">${{report.sale_total}}<br/>
+            avg ${{report.sale_average}}
+          </td>
+          <td align="right">#{{report.sale_count}}</td>
+        </tr>
+        <tr>
+          <th>Revenue</th>
+          <td align="right">${{report.fees_net}}</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th>Online Payments</th>
+          <td align="right">${{report.payment_online_total}}</td>
+          <td align="right">#{{report.payment_online_count}}</td>
+        </tr>
+        <tr>
+          <th>Offline Payments</th>
+          <td align="right">${{report.payment_offline_total}}</td>
+          <td align="right">#{{report.payment_offline_count}}</td>
+        </tr>
+        <tr>
+          <th>Refunds Online</th>
+          <td align="right">${{report.refund_online_total}}</td>
+          <td align="right">#{{report.refund_online_count}}</td>
+        </tr>
+        <tr>
+          <th>Refunds Offline</th>
+          <td align="right">${{report.refund_offline_total}}</td>
+          <td align="right">#{{report.refund_offline_count}}</td>
+        </tr>
+        <tr>
+          <th>Credit Card In/Out</th>
+          <td align="right">${{report.credit_card_in}}</td>
+          <td align="right">$-{{report.credit_card_out}}</td>
+        </tr>
+        <tr>
+          <th>Ach In/Out</th>
+          <td align="right">{{report.ach_in}}</td>
+          <td align="right">$-{{report.ach_out}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
