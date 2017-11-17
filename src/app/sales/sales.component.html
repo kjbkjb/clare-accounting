@@ -1,3 +1,46 @@
-<ul>
-  <li *ngFor="let sale of sales">{{sale.description}}</li>
-</ul>
+<mat-card>
+  <mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="sale_number">
+      <mat-header-cell *matHeaderCellDef> Sale Number </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{sale.sale_number}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="user">
+      <mat-header-cell *matHeaderCellDef> User </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{sale.user_full_name}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{sale.description}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="placed_at">
+      <mat-header-cell *matHeaderCellDef> Placed </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{sale.placed_at}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="created_at">
+      <mat-header-cell *matHeaderCellDef> Created </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{sale.created_at}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{sale.status}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="pricing_model">
+      <mat-header-cell *matHeaderCellDef> Pricing Model </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{sale.pricing_model}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="total">
+      <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
+      <mat-cell *matCellDef="let sale"> {{sale.total}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</mat-card>
