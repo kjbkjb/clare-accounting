@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { MatTableDataSource } from '@angular/material';
+
 import {SalesService} from './sales.service';
 import {Sale} from './sale';
 
@@ -10,6 +12,8 @@ import {Sale} from './sale';
 })
 export class SalesComponent implements OnInit {
   sales: Sale[];
+  displayedColumns = ['sale_number', 'user', 'description', 'placed_at', 'created_at', 'status', 'pricing_model', 'total'];
+  dataSource: MatTableDataSource<Sale>;
 
   constructor(private salesService: SalesService) { }
 
@@ -18,6 +22,7 @@ export class SalesComponent implements OnInit {
   }
 
   getSales(): void {
-    this.salesService.getSales().subscribe(response => this.sales = response.result);
+    this.salesService.getSales().subscribe(response => this.dataSource = new MatTableDataSource<Sale>(response.result));
   }
+
 }
