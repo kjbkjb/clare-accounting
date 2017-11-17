@@ -3,7 +3,7 @@
 
 @include mat-core();
 
-$se-app-primary: mat-palette($mat-blue);
+$se-app-primary: mat-palette($mat-teal);
 $se-app-accent: mat-palette($mat-blue-grey, A200, A100, A400);
 $se-app-warn: mat-palette($mat-red);
 $se-app-theme: mat-light-theme($se-app-primary, $se-app-accent, $se-app-warn);
