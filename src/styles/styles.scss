@@ -13,7 +13,6 @@ $se-app-theme: mat-light-theme($se-app-primary, $se-app-accent, $se-app-warn);
 body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   margin: 0;
-  height: 100vh;
   display: flex;
   flex-direction: column;
 
