@@ -1,0 +1,33 @@
+.mat-sidenav-container {
+  min-height: 100vh;
+
+  .mat-drawer {
+    background: transparent;
+    min-width: 250px;
+  }
+}
+
+.mat-sidenav-content {
+  padding: 20px;
+}
+
+.mat-nav-list {
+  margin-left: 8px;
+  margin-right: 16px;
+
+  .mat-list-item {
+    border-radius: 4px;
+    color: mat-color($mat-grey, 700);
+    font-size: 14px;
+    font-weight: 500;
+
+    .material-icons {
+      margin-right: 24px;
+    }
+  }
+
+  .mat-list-item-active {
+    color: mat-color($se-app-primary, 400);
+    background-color: mat-color($mat-grey, 200);
+  }
+}

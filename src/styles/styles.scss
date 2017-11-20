@@ -1,0 +1,28 @@
+// Configure angular material theme
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$se-app-primary: mat-palette($mat-teal);
+$se-app-accent: mat-palette($mat-blue-grey, A200, A100, A400);
+$se-app-warn: mat-palette($mat-red);
+$se-app-theme: mat-light-theme($se-app-primary, $se-app-accent, $se-app-warn);
+
+@include angular-material-theme($se-app-theme);
+
+body {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+// Custom style modules
+@import './modules/_side-navigation';
+@import './modules/_toolbar';
+@import './modules/_typography';
